@@ -1,0 +1,21 @@
+# Admin Views
+_category_show:
+    path:     /admin/category
+    defaults: { _controller: CategoryBundle:Category:index }
+
+_category_showOne:
+    path:     /admin/category/show/{id}
+    defaults: { _controller: CategoryBundle:Category:show }
+
+_category_create:
+    path:     /admin/category/create
+    defaults: { _controller: CategoryBundle:Category:create }
+
+_category_update:
+    path:     /admin/category/edit/{id}
+    defaults: { _controller: CategoryBundle:Category:update }
+
+_category_delete:
+    path:     /admin/category/delete/{id}
+    defaults: { _controller: CategoryBundle:Category:delete }
+

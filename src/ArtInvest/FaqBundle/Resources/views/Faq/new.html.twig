@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block content -%}
+	<div class="container ct">
+		
+	
+    <h1>Faq creation</h1>
+
+ <!-- FAQ MORE HELP -->
+            <div class="faqHelp row">
+                <h2>Still can't find what you need?</h2>
+                    {{ form_start(form) }}
+                        {{ form_errors(form) }}
+                         
+                        {{ form_row(form.question, { 'attr': {'class': 'form-control'} }) }} 
+                        {{ form_row(form.answer, { 'disabled':'disabled', 'attr': {'class': 'hide'} }) }} 
+                        {{ form_row(form.submit, { 'attr': {'class': 'class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 btn orange-btn'} }) }} 
+
+                    {{ form_end(form) }}            
+            </div><!-- end FAQ MORE HELP -->
+</div>
+{% endblock %}

@@ -1,0 +1,253 @@
+<?php
+
+namespace ArtInvest\MediaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Media
+ * @ORM\HasLifecycleCallbacks
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Media
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var array
+     *
+     * @Assert\File( maxSize="1M", mimeTypes={"image/jpg", "image/png", "image/gif"} )
+     *
+     * @ORM\Column(name="image", type="json_array")
+     */
+    private $image;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="video", type="json_array", nullable = true)
+     */
+    private $video;
+
+    /**
+     * @var array
+     *
+     * @Assert\File( maxSize="10M", mimeTypes={"application/pdf", "application/excel", "application/msword"} )
+     *
+     * @ORM\Column(name="document", type="json_array")
+     */
+    private $document;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="ArtInvest\ProjectBundle\Entity\Project", inversedBy="medias")
+     * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
+     */
+    protected $projects;
+
+    private $temp;
+
+    private $path;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set image
+     *
+     * @param array $image
+     *
+     * @return Media
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return array
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set video
+     *
+     * @param array $video
+     *
+     * @return Media
+     */
+    public function setVideo($video)
+    {
+        $this->video = $video;
+
+        return $this;
+    }
+
+    /**
+     * Get video
+     *
+     * @return array
+     */
+    public function getVideo()
+    {
+        return $this->video;
+    }
+
+
+
+    /**
+     * Get document
+     *
+     * @return array
+     */
+    public function getDocument()
+    {
+        return $this->document;
+    }
+
+    /**
+     * Set projects
+     *
+     * @param \ArtInvest\ProjectBundle\Entity\Project $projects
+     *
+     * @return Media
+     */
+    public function setProjects(\ArtInvest\ProjectBundle\Entity\Project $projects = null)
+    {
+        $this->projects = $projects;
+
+        return $this;
+    }
+
+    /**
+     * Get projects
+     *
+     * @return \ArtInvest\ProjectBundle\Entity\Project
+     */
+    public function getProjects()
+    {
+        return $this->projects;
+    }
+
+    // public function getAbsolutePath()
+    // {
+    //     return null === $this->document
+    //         ? null
+    //         : $this->getUploadRootDir().'/'.$this->document;
+    // }
+
+    // public function getWebPath()
+    // {
+    //     return null === $this->document
+    //         ? null
+    //         : $this->getUploadDir().'/'.$this->document;
+    // }
+
+    // protected function getUploadRootDir()
+    // {
+    //     // the absolute directory document where uploaded
+    //     // documents should be saved
+    //     return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    // }
+
+    // protected function getUploadDir()
+    // {
+    //     // get rid of the __DIR__ so it doesn't screw up
+    //     // when displaying uploaded doc/image in the view.
+    //     return 'uploads/documents';
+    // }
+
+    
+
+    // /**
+    //  * Sets file.
+    //  *
+    //  * @param UploadedFile $file
+    //  */
+    // public function setDocument(UploadedFile $file = null)
+    // {
+    //     $this->document = $file;
+    //     // check if we have an old image path
+    //     if (isset($this->path)) {
+    //         // store the old name to delete after the update
+    //         $this->temp = $this->path;
+    //         $this->path = null;
+    //     } else {
+    //         $this->path = 'initial';
+    //     }
+    // }
+
+    // /**
+    //  * @ORM\PrePersist()
+    //  * @ORM\PreUpdate()
+    //  */
+    // public function preUpload()
+    // {
+    //     if (null !== $this->getDocument()) {
+    //         // do whatever you want to generate a unique name
+    //         $filename = sha1(uniqid(mt_rand(), true));
+    //         $this->path = $filename.'.'.$this->getDocument()->guessExtension();
+    //     }
+    // }
+
+    // /**
+    //  * @ORM\PostPersist()
+    //  * @ORM\PostUpdate()
+    //  */
+    // public function upload()
+    // {
+    //     if (null === $this->getDocument()) {
+    //         return;
+    //     }
+
+    //     // if there is an error when moving the file, an exception will
+    //     // be automatically thrown by move(). This will properly prevent
+    //     // the entity from being persisted to the database on error
+    //     $this->getDocument()->move($this->getUploadRootDir(), $this->path);
+
+    //     // check if we have an old image
+    //     if (isset($this->temp)) {
+    //         // delete the old image
+    //         unlink($this->getUploadRootDir().'/'.$this->temp);
+    //         // clear the temp image path
+    //         $this->temp = null;
+    //     }
+    //     $this->document = null;
+    // }
+
+    // /**
+    //  * @ORM\PostRemove()
+    //  */
+    // public function removeUpload()
+    // {
+    //     $file = $this->getAbsolutePath();
+    //     if ($file) {
+    //         unlink($file);
+    //     }
+    // }
+}

@@ -1,0 +1,30 @@
+donation:
+    path:     /
+    defaults: { _controller: "DonationBundle:Donation:index" }
+
+donation_show:
+    path:     /{id}/show/{project_id}
+    defaults: { _controller: "DonationBundle:Donation:show" }
+
+donation_new:
+    path:     /new/{id}
+    defaults: { _controller: "DonationBundle:Donation:new" }
+
+donation_create:
+    path:     /create
+    defaults: { _controller: "DonationBundle:Donation:create" }
+    methods:  POST
+
+donation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DonationBundle:Donation:edit" }
+
+donation_update:
+    path:     /{id}/update
+    defaults: { _controller: "DonationBundle:Donation:update" }
+    methods:  [POST, PUT]
+
+donation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DonationBundle:Donation:delete" }
+    methods:  [POST, DELETE]

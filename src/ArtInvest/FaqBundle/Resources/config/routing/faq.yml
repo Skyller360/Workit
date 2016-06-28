@@ -1,0 +1,44 @@
+faq:
+    path:     /
+    defaults: { _controller: "FaqBundle:Faq:index" }
+
+faq_show:
+    path:     /show/{id}
+    defaults: { _controller: "FaqBundle:Faq:show" }
+
+faq_new:
+    path:     /new
+    defaults: { _controller: "FaqBundle:Faq:new" }
+
+faq_create:
+    path:     /create
+    defaults: { _controller: "FaqBundle:Faq:create" }
+    methods:  POST
+
+#Admin Views
+
+faq_edit:
+    path:     /edit/{id}
+    defaults: { _controller: "FaqBundle:Faq:edit" }
+
+faq_update:
+    path:     /update/{id}
+    defaults: { _controller: "FaqBundle:Faq:update" }
+    methods:  [POST, PUT]
+
+faq_delete:
+    path:     /delete/{id}
+    defaults: { _controller: "FaqBundle:Faq:delete" }
+    methods:  [POST, DELETE, GET]
+
+_admin_faq:
+    path:     /admin
+    defaults: { _controller: "FaqBundle:Faq:admin" }
+
+faq_answer:
+    path:     /answer/{id}
+    defaults: { _controller: "FaqBundle:Faq:answerForm" }
+
+# _admin_faq_update:
+#     path:     /GiveAnswer/{id}
+#     defaults: { _controller: "FaqBundle:Faq:answer" }

@@ -1,0 +1,124 @@
+{% extends '::base.html.twig' %}
+{% block head %}
+	{% block title %}Art'invest{% endblock %}
+
+	{% block stylesheets %}
+		<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css'>		
+	{% endblock %}
+{% endblock %}
+{% block body %}
+
+    <h1>Project creation</h1>
+   	
+
+	{{ form_start(form) }}
+
+	   {# affiche les erreurs "globales" #}
+		{{ form_errors(form) }}
+		{# Form Start #}
+
+		{{ form_row(form.title) }} <br/>
+
+		{# COVER UPLOAD #}		
+		{% spaceless %}
+			{# img #}
+			<div id="dnd"></div>
+			{# input #}
+	    	<input type="file" onchange="upload(this.files[0])" /><br/>
+		    <input type="text" name="link" id="linkimage" value="">
+		    <div id="progress"><div id="progress_inner">0%</div></div>
+		{% endspaceless %}
+    	{{ form_row(form.category) }}<br/>
+    	{{ form_row(form.delay) }}<br/>
+    	{{ form_row(form.amount) }}<br/>    	
+    	{{ form_row(form.abstract) }}<br/>
+    	{{ form_row(form.description) }}<br/>    	
+		{{ form_row(form.risk) }}	<br/>
+    	{{ form_row(form.video) }}<br/>
+    	{# PITCH : images,videos,files #}
+		
+
+
+		{# Goodies #}
+		{% spaceless %}
+			<h3>Goodies</h3>
+			<input type="text" name="goodies_title1" placeholder="Abstract"><br/>
+			<input type="number" name="goodies_amount1" placeholder="Amount" ><br/>
+			<textarea name="goodies_desc1" placeholder="Description"></textarea><br/>
+			<hr>
+			<input type="text" name="goodies_title2" placeholder="Abstract"><br/>
+			
+			<input type="number" name="goodies_amount2" placeholder="Amount" ><br/>
+			<textarea name="goodies_desc2" placeholder="Description"></textarea><br/>
+			<button>Add a rewards</button>			
+		{% endspaceless %}
+
+	{{ form_end(form) }}
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('_project_show') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+<script>
+	    function upload(file) {    
+			if (!file || !file.type.match(/^image\/.+/)) return;    
+			console.log("Uploading file: "+file.name);
+			
+			if (typeof FileReader != 'undefined') {
+			    var reader = new FileReader();
+			    reader.onload = function (event) {
+			      var image = new Image();
+			      image.src = event.target.result;
+			      image.style.maxHeight = "450px";
+			      
+			      dnd.innerHTML = "";
+			      dnd.appendChild(image);
+			      dnd.appendChild(title = document.createElement('p'));
+			      title.innerHTML = file.name + ' (' + Math.round(file.size/1024|0) + 'Kb)';
+			    };
+			    reader.readAsDataURL(file);
+			}
+			
+			var fd = new FormData(); 
+			fd.append("image", file); 
+			var xhr = new XMLHttpRequest(); 
+			xhr.open("POST", "https://api.imgur.com/3/image.json"); 
+			xhr.onload = function() {    
+			    var link = JSON.parse(xhr.responseText).data.link;
+			    pi.style.width = "100%";
+			    setTimeout(function(){pi.style.width = "0%;"},700);
+			    document.body.appendChild(span = document.createElement('p'));
+			    title.innerHTML += ' : ' + link;
+			    var input = document.getElementById('linkimage');
+			    input.value = link;	
+			    // document.getElementById('image_link').value = link;
+			    $.cookie('image_link', link);
+			}
+			if ("upload" in new XMLHttpRequest) {
+			    document.getElementById('progress').style.display = 'block';
+			    pi = document.getElementById('progress_inner');
+			    xhr.upload.onprogress = function (event) {
+					if (event.lengthComputable) {
+					  var complete = (event.loaded / event.total * 100 | 0);
+					  pi.style.width = complete+"%";
+					  pi.innerHTML = complete+"%";
+					  console.log(pi.innerHTML);
+					}
+			    }
+			}
+			
+			xhr.setRequestHeader('Authorization', 'Client-ID 28aaa2e823b03b1');
+			xhr.send(fd);
+	    	}
+</script>
+
+	    	{% block javascripts %}
+				<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" type="text/javascript"></script>
+			{% endblock %}
+
+{% endblock %}

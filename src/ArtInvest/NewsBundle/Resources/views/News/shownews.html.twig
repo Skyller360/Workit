@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Art'invest{% endblock %}
+
+  {% block header %}
+      <p></p>
+  {% endblock %}
+
+{% block body -%}
+    <h1>News</h1>
+
+    {% for entity in entities %}               
+       <p><label>Title</label>
+       {{ entity.title }}</p>
+       <p><label>Content</label>
+       {{ entity.content|raw }}</p>
+       <p><label>Publish at</label>
+       {{ entity.date|date("m/d/Y") }}</p>
+      {% if creator == true %}
+        <a href="{{ path('news_edit', { 'id': entity.id }) }}">Edit News</a>    
+        <a href="{{ path('news_delete', { 'id': entity.id }) }}">Delete News</a>    
+      {% endif %}
+    {% endfor %}
+    <br>
+    <a href="{{ path('_project_showOne', { 'id':  id }) }}">Get Back</a>
+    {% if creator == true %}
+      <a href="{{ path('_add_news', { 'id': id }) }}">Add News</a>    
+    {% endif %}
+
+{% endblock %}

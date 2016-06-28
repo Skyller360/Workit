@@ -1,0 +1,104 @@
+{% extends "::base.html.twig" %}	
+
+{% block login %}
+    <ul class="nav navbar-nav navbar-right">	                	
+    	{% if logged == false %}
+            <li><a id="signup" href="{{ path('user_homepage') }}">Sign Up</a></li>
+            <li><a id="login" href="#">Log In</a></li>
+        {% endif %}
+        {% if logged == true %}	                	
+            <li><a href="{{ path('user_show', { 'id': session.id }) }}"><span class="glyphicon glyphicon-user"></span><span>{{session.login}}</span></a></li>
+            <li><a href="{{ path('_logout') }}">Logout</a></li>
+       	{% endif %}		            
+    </ul>
+{% endblock	%}
+
+{% block content %}
+
+    <!--|||||||||||||||||||||||||||||||||||||||||-->
+	{# Login Popup #}
+	{% if logged == false %}
+		<div class="overlay" id="login_overlay">
+	        <div class="login" id="popup_login">
+	            <a class="close" href="#">X</a>
+	            <div class="logFB">
+	                <img src="http://i.imgur.com/XG0zHdW.png" alt="Login with Facebook">
+	            </div>
+	            <p>Or log in with email</p>
+	            <form role="form" method="post" action="/Login_check">
+	                <div class="form-group">
+	                    <label for="form_login" class="required">*Login</label>
+	                    <input type="text" id="form_login" name="login" required="required" placeholder="johndoe01"/>
+	                </div>
+	                <div class="form-group">
+	                    <label for="form_hash_first" class="required">*Password</label>
+	                    <input type="password" id="form_hash_first" name="password" required="required"/>
+	                </div>
+	                <div class="checkbox row">
+	                    <label class="check col-xs-6 col-sm-6 col-md-6"><input class="check" type="checkbox" value="">Remember me</label>
+	                    <a href="#"><span class="col-xs-6 col-sm-6 col-md-6 hover text-right">Forgot password?</span></a>
+	                </div>
+	                <div class="form-group row">
+	                    <button class="col-xs-12 col-sm-12 col-md-12 btn" type="submit" id="form_save">Log in</button>
+	                </div>
+	            </form>
+	            <p>New on Workit? <a class="hover" href="">Sign Up</a></p>
+	        </div>
+	    </div>
+	    {# Signup Popup #}
+        <div class="overlay" id="signup_overlay">
+	        <div class="signup" id="popup_signup">
+	            <a class="close" href="#">X</a>
+	            <div class="signFB">
+	                <img src="http://i.imgur.com/XG0zHdW.png" alt="SignUp with Facebook">
+	            </div>
+	            <p>Or sign up with email</p>
+		            {{ form_start(subscribe_form )}}
+		                
+		            {{ form_end(subscribe_form )}}
+	            <p>By signing up you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+	            <span>Already have an account? <a class="hover" href="">Log In</a></span>
+	        </div>
+    	</div>
+	{% endif %}
+    <!--|||||||||||||||||||||||||||||||||||||||||-->  
+	
+	<!-- HEADER -->
+	<header class="headerAll row">
+		<h1 class="text-center">Contact us</h1>
+		<h2 class="text-center">Get in touch!</h2>
+	</header><!-- end HEADER -->
+	<!-- CONTAINER -->
+	<div class="container ct">
+		<!-- SECTION -->
+		<section>	
+			<div class="contact row">
+				<form role="form">
+					<div class="form-group">
+				    	<label for="name">Name:</label>
+				    	<input type="text" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+				    	<label for="mail">Email:</label>
+				    	<input type="text" class="form-control" id="mail">
+					</div>
+				  	<div class="form-group">
+					  	<label for="subject">Subject:</label>
+					  	<select class="form-control" id="subject">
+					   		<option>General enquiries</option>
+					    	<option>Report an error</option>
+					    	<option>Sponsors</option>
+					    	<option>Partners</option>
+					    	<option>Jobs</option>
+					  	</select>
+				  	</div>
+				  	<div class="form-group">
+						<label for="msg">Message:</label>
+						<textarea class="form-control" rows="5" id="msg"></textarea>
+					</div>
+				  <button type="submit" class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 orange-btn btn">Send</button>
+				</form>	
+			</div>
+		</section><!-- end SECTION -->
+	</div><!-- end CONTAINER -->
+{% endblock %}

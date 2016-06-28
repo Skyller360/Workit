@@ -1,0 +1,1711 @@
+/**************************/
+/********** fonts *********/
+/**************************/
+@font-face {
+    font-family: 'opensanscondensedbold';
+    src: url('../fonts/opensans-condbold-webfont.eot');
+    src: url('../fonts/opensans-condbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-condbold-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-condbold-webfont.woff') format('woff'),
+         url('../fonts/opensans-condbold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-condbold-webfont.svg#open_sans_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'opensansregular';
+    src: url('../fonts/opensans-regular-webfont.eot');
+    src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**************************/
+/********** main *********/
+/**************************/
+body {
+  font-family: 'opensansregular';
+  font-size: 1em;
+  line-height: 1.6;
+  color: #222222;
+  background: #fff;
+}
+
+section{
+  margin: 0 10px;
+}
+
+.ct{
+  min-height: 850px;
+}
+
+.orange-btn{
+  background: #fff;
+  border: 1px solid #E67E22;
+  color: #E67E22;
+  font-family: 'opensanscondensedbold';
+  text-transform: uppercase;
+}
+
+.orange-btn:hover{
+  background: #E67E22;
+  color: #fff; 
+}
+
+.black-btn{
+  background: #fff;
+  border: 1px solid #222;
+  color: #222;
+  font-family: 'opensanscondensedbold';
+  text-transform: uppercase;
+  display: block;
+}
+
+.black-btn:hover{
+  background: #222;
+  color: #fff; 
+}
+
+.progress{
+  border: 1px solid #1ABC9C;
+}
+
+.glyph{
+  color: #394091;
+}
+
+.glyph:hover{
+  color: #222;
+}
+
+.glyphicon:hover{
+  color: #222;
+}
+
+#ajaxLoader{
+ display: none;
+}
+
+/**************************/
+/********** intro *********/
+/**************************/
+#intro{
+  background: #222;
+  height: 40px;
+  padding: 10px 5px;
+  font-family: 'opensanscondensedbold';
+}
+
+#intro > p{
+  color: #fff;
+  font-size: 0.938em;
+  text-align: center;
+}
+
+#intro a{
+  color: #1ABC9C;
+}
+
+#intro span{
+  margin-left: 10px;
+}
+
+/**************************/
+/********** flash *********/
+/**************************/
+.success{
+  background: #1ABC9C;
+}
+
+.error{
+  background: #e84c3d;
+}
+
+#flash{
+  height: 40px;
+  padding: 10px 5px;
+  font-family: 'opensansregular';
+  z-index: 9997;
+}
+
+#flash > p{
+  color: #fff;
+  text-align: center;
+}
+
+#flash a{
+  color: #222;
+}
+
+#flash a:hover{
+  color: #fff;
+}
+
+#flash span{
+  margin-left: 10px;
+}
+
+/**************************/
+/********** nav *********/
+/**************************/
+nav ul:first-of-type li{
+  font-family: 'opensanscondensedbold';
+  font-size: 1.5em;
+}
+
+nav .navbar-form{
+  border: none;
+}
+
+nav .navbar-brand{
+  background: url('http://i.imgur.com/evpMV6O.png') no-repeat 5px 10px;
+  height: 50px;
+  width: 170px;
+  display: block;
+  text-indent: -9999px;
+}
+
+/**************************/
+/********** header *********/
+/**************************/
+#bg{
+  background: url("http://i.imgur.com/EMwbYYX.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 20px 10px;
+}
+
+#bg h1, #bg h2{
+  color: #fff;
+  margin: 0;
+}
+
+#bg h1{
+  font-family: 'opensanscondensedbold';
+  font-size: 2.25em;
+}
+
+#bg h2{
+  font-size: 0.875em;
+  padding-bottom: 20px;
+}
+
+.create-btn{
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: 'opensanscondensedbold';
+  font-size: 1.25em;
+  width: 70%;
+  text-shadow: 1px 1px #222;
+}
+
+.create-btn:hover{
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  text-shadow: 1px 1px #222;
+  border: 1px solid #fff;
+}
+
+/********** headerAll *********/
+.headerAll{
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px 30px;
+  border: 1px solid #ccc;
+}
+
+.headerAll h1, .headerAll h2{
+  color: #222;
+  margin: 0;
+}
+
+.headerAll h1{
+  font-family: 'opensanscondensedbold';
+  font-size: 2.25em;
+  line-height: 1.2;
+  padding-bottom: 20px; 
+}
+
+.headerAll h2{
+  font-size: 0.875em;
+}
+
+.headerAll ul{
+  list-style: none;
+  padding: 0;
+}
+
+.headerAll ul li{
+  font-size: 0.875em;
+}
+
+/**************************/
+/********** projects *********/
+/**************************/
+#freshProjects h1, #freshCats h1, #commHighlights h1{
+  font-family: 'opensanscondensedbold';
+  font-size: 1.5em;
+}
+
+/********** show all button *********/
+.shall-btn{
+  margin-top: 20px;
+}
+
+/********** caption *********/
+.caption > h1{
+  width: 100%;
+  margin: 0;
+}
+
+.caption h1 + p{
+  font-size: 0.875em;
+  padding-bottom: 10px;
+  height: 110px;
+}
+
+.caption p + ul{
+  list-style: none;
+  padding: 0;
+}
+
+.caption p + ul li {
+  font-size: 0.875em;
+}
+
+.progress + ul li p:first-of-type{
+  color: #394091;
+  font-weight: bold;
+  font-size: 0.75em;
+}
+
+.progress + ul li p:last-of-type{
+  font-weight: bold;
+  font-size: 0.75em;
+}
+
+/**************************/
+/********** categories *********/
+/**************************/
+.pic-link {
+  color:#fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  }
+
+.pic-link:hover{
+  color: #ccc;
+}
+
+.pic-link span:last-of-type{
+  font-size: 0.75em;
+  position: absolute;
+  top: 70%;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+/**************************/
+/********** community highlights *********/
+/**************************/
+.commHighlightsThumb span{
+  font-size: 1.5em;
+  color: #fff;
+  position: absolute;
+  top: 60%;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  text-shadow: 1px 1px #222;
+  text-transform: uppercase;
+}
+
+/**************************/
+/********** explore *********/
+/**************************/
+.btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary{
+  color: #ffffff;
+  background-color: #333;
+  border-color: #333;
+}
+
+.catTitle{
+  display: none;
+}
+
+.dropdown{
+  margin-bottom: 20px;
+}
+
+.dropdown button{
+  background: #333;
+  border: none;
+  width: 100%;
+  height: 40px;
+}
+
+.dropdown button:hover, .dropdown button:active, .dropdown button:focus, .dropdown button:link{
+  background: #222;
+}
+
+.dropdown-menu{
+  text-align: center;
+  width: 100%;
+}
+
+.dropdown-menu li{
+  padding: 10px 0;
+}
+
+.dropdown-menu li:hover{
+  background: #ccc;
+  color: #333;
+  padding: 10px 0;
+}
+
+.dropdown-menu a{
+  font-size: 1.125em;
+}
+
+.filter{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter ul{
+  padding: 0;
+  margin: 0;
+}
+
+.filter li{
+  display: inline-block;
+  font-size: 0.875em;
+}
+
+.filter li:not(:last-child){
+  margin-right: 18px;
+}
+
+.filter a:hover, .filter a:active{
+  text-decoration: none;
+  color: #1ABC9C;
+  border-bottom: 2px solid #1ABC9C;
+  padding-bottom: 5px;
+}
+
+/**************************/
+/********** one project *********/
+/**************************/
+
+/********** header one project *********/
+#rewards-btn{
+  margin-top: 20px;
+}
+
+div#edit-btn.row{
+  margin-bottom: 20px;
+}
+
+#edit-btn ul{
+  list-style: none;
+  padding: 0;
+}
+
+.capt img{
+  margin-bottom: 20px;
+}
+
+.capt p{
+  font-size: 0.875em;
+  margin-bottom: 20px;
+}
+
+.btn-project a{
+  margin: 10px 0;
+}
+
+.share{
+  display: none;
+}
+
+.share ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.share li{
+  text-align: center;
+}
+
+.share a{
+  margin: 0 auto;
+  display: block;
+  overflow: hidden; 
+  height: 32px;
+  width: 32px; 
+  color: transparent;
+}
+
+.share ul li:first-child a{
+  background: url('http://i.imgur.com/KXR6pGL.png') no-repeat 0 0;
+}
+
+.share ul li:nth-child(2) a{
+  background: url('http://i.imgur.com/uPgobUU.png') no-repeat 0 0;
+}
+
+.share ul li:nth-child(3) a{
+  background: url('http://i.imgur.com/q03VOyE.png') no-repeat 0 0;
+}
+
+.share ul li:last-child a{
+  background: url('http://i.imgur.com/wBpI7F4.png') no-repeat 0 0;
+}
+
+.share ul li:first-child a:hover{
+  background: url('http://i.imgur.com/cJFaKps.png') no-repeat 0 0;
+}
+
+.share ul li:nth-child(2) a:hover{
+  background: url('http://i.imgur.com/CBG1Stl.png') no-repeat 0 0;
+}
+
+.share ul li:nth-child(3) a:hover{
+  background: url('http://i.imgur.com/TUlNUOV.png') no-repeat 0 0;
+}
+
+.share ul li:last-child a:hover{
+  background: url('http://i.imgur.com/DSpEVis.png') no-repeat 0 0;
+}
+
+.btn-project .share + a:last-child{
+  margin-bottom: 40px;
+}
+
+.btn-project .share + a:last-child:active{
+  background: #E67E22;
+  color: #fff;
+}
+
+.active{
+  display: none;
+}
+
+/********** tabs one project *********/
+
+/********** main tabs one project *********/
+.pitch, .risk, .document, .find, .question, .news:not(:last-child), .comment, #tabs-4 .row:not(:last-child) .workiters, .summary{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.tab > div > ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tab > div > ul > li{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.tab > div > ul > li > a{
+  padding: 10px 0;
+  font-size: 0.688em;
+  display: block;
+  text-transform: uppercase;
+}
+
+.tab > div > ul > li > a:hover, .tab > div > ul > li > a:active{
+  color: #1ABC9C;
+  background: #efefef;
+}
+
+.tab h1, .tab h2{
+  font-family: 'opensanscondensedbold';
+}
+
+.tab h1{
+  margin: 0;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.tab h2{
+  font-size: 1.250em;
+}
+
+.tab p{
+  font-size: 0.875em;
+  margin-bottom: 20px;
+}
+
+.tab img{
+  margin-bottom: 20px;
+}
+
+/********** #tabs-1 *********/
+.document{
+  margin: 20px 0;
+}
+
+.prohibited {
+  padding-top: 20px;
+}
+
+.prohibited a{
+  color: #19BA9A;
+}
+
+/********** #tabs-2 *********/
+#tabs-2 h3{
+  font-size: 1em;
+  font-family: 'opensanscondensedbold';
+}
+
+#tabs-2 a{
+  text-align: center;
+  font-size: 0.875em;
+  font-family: 'opensanscondensedbold'; 
+}
+
+/********** #tabs-3 *********/
+#tabs-3 p{
+  margin: 0;
+}
+
+#tabs-3 p:first-of-type{
+  margin-top: 20px;
+  font-family: 'opensanscondensedbold';
+  font-size: 1em;
+  padding-left: 10px;
+}
+
+#tabs-3 p:first-of-type + p{
+  font-family: 'opensanscondensedbold';
+  font-size: 0.75em;
+  padding-left: 10px;
+}
+
+#tabs-3 p:first-of-type + p + p{
+  margin-bottom: 20px;
+}
+
+#tabs-3 a{
+  font-family: 'opensanscondensedbold';
+  font-size: 0.875em;
+  text-align: right;
+}
+
+#tabs-3 a:hover{
+  color: #19BA9A;
+}
+
+.postComment textarea{
+  width: 100%;
+  resize:none;
+}
+
+.comment, .workiters{
+  margin-top: 20px; 
+}
+
+.comment img, .workiters img{
+  width: 80px;
+  height: 80px;
+}
+
+.avatar{
+  width: 80px;
+  height: 80px;
+}
+
+.form-control{
+  resize:none;
+}
+
+/********** #tabs-4 *********/
+#tabs-4 p{
+  margin: 0;
+}
+
+#tabs-4 p:first-of-type{
+  margin-top: 20px;
+  font-family: 'opensanscondensedbold';
+  font-size: 1em;
+  padding-left: 10px;
+}
+
+#tabs-4 p:first-of-type + p{
+  font-family: 'opensanscondensedbold';
+  font-size: 0.75em;
+  padding-left: 10px;
+}
+
+#tabs-4 span{
+  margin-top: -15px;
+  font-family: 'opensanscondensedbold';
+  font-size: 1.5em;
+  text-align: right;
+}
+
+/********** rewards on mobile *********/
+.rewardsAll h1{
+  margin: 0;
+  font-family: 'opensanscondensedbold';
+  font-size: 1.5em;
+}
+
+.rewardsAll h2{
+  font-family: 'opensanscondensedbold';
+  font-size: 1.25em;
+}
+
+.rewardsAll{
+  padding: 0 10px;
+}
+
+.rewardsAll .rewDetails:not(:last-child){
+  border-bottom: 1px solid #ccc;
+}
+
+.rewardsAll .rewDetails span{
+  padding-left: 40px;
+}
+
+.rewardsAll .rewDetails p{
+  margin: 0;
+  font-size: 0.875em;
+}
+
+.rewardsAll .rewDetails h2 + p{
+  margin-bottom: 20px;
+}
+
+.rewardsAll .rewDetails > ul li{
+  text-align: left !important;
+  border: none !important;
+}
+
+.rewardsAll .rewDetails > ul li p:first-of-type{
+  color: #394091;
+  font-weight: bold;
+  font-size: 0.75em;
+}
+
+.rewardsAll .rewDetails > ul li p:last-of-type{
+  font-weight: bold;
+  font-size: 0.75em;
+  padding-bottom: 10px;
+}
+
+.rewardsAll a{
+  display: block;
+}
+
+.rewardsAll a:hover{
+  background: #efefef;
+  text-decoration: none;
+}
+
+/**************************/
+/********** contribute *********/
+/**************************/
+.goodiesActive{
+  background: #efefef;
+  text-decoration: none;
+}
+
+.tabContrib h1, .tabPay h1{
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.tabContrib > h1, .tabPay > h1{
+  margin-top: 60px;
+}
+
+.tabContrib div > input{
+  margin: 20px 0;
+  text-align: center;
+}
+
+.tabContrib .checkbox, .tabContrib .checkbox + h2{
+  text-align: center;
+}
+
+.tabContrib .checkbox{
+  margin: 40px 0;
+}
+
+.tabContrib .checkbox label{
+  font-size: 0.75em;
+}
+
+/********** rewards *********/
+.rewardsCt a{
+  display: block;
+  text-decoration: none;
+}
+
+.rewardsCt a:hover{
+  background: #efefef;
+  text-decoration: none;
+}
+
+.rewardsCt .rewDetail > ul li{
+  text-align: left !important;
+  border: none !important;
+}
+
+.rewardsCt .rewDetail > ul li p:first-of-type{
+  color: #394091;
+  font-weight: bold;
+  font-size: 0.75em;
+  margin: 0;
+}
+
+.rewardsCt .rewDetail > ul li p:last-of-type{
+  font-weight: bold;
+  font-size: 0.75em;
+}
+
+.rewardsCt .rewDetail span{
+  padding-left: 40px;
+}
+
+/********** pay / summary *********/
+.tabPay h1{
+  margin-bottom: 20px;
+}
+
+.tabPay p:nth-child(even){
+  text-align: right;
+}
+
+.total{
+  margin-top: 20px;
+  font-family: 'opensanscondensedbold';
+  font-size: 1.5em;
+}
+
+/**************************/
+/********** bio *********/
+/**************************/
+.bioHeader, .bioList, .website, .questionBio{
+  text-align: center;
+}
+
+.bioHeader img{
+  margin-bottom: 40px;
+  width: 160px;
+  height: 160px;
+}
+
+.bioHeader p{
+  font-size: 0.875em;
+  margin-bottom: 40px;
+}
+
+.bioList ul{
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.website{
+  margin-bottom: 40px;
+}
+
+.website a:hover{
+  color: #1abc9c;
+}
+
+.questionBio h1{
+  font-size: 1.5em;
+  font-family: 'opensanscondensedbold';
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+/**************************/
+/********** create *********/
+/**************************/
+.create{
+  text-align: center;
+  margin-bottom: 20px;  
+}
+
+.create p{
+  margin-bottom: 20px;
+  font-size: 0.875em;
+}
+
+/**************************/
+/********** createForm *********/
+/**************************/
+.createForm h1{
+  margin-bottom: 20px;
+}
+
+.createForm label, .createForm input, .createForm textarea, .createForm select, .createForm option{
+  font-size: 0.875em;
+}
+
+.createForm input, .createForm select, .createForm textarea{
+  margin-bottom: 20px;
+}
+
+.margin-btn{
+  margin-bottom: 40px;
+}
+
+/**************************/
+/********** FAQ *********/
+/**************************/
+.faq, .method{
+  margin-bottom: 40px;
+}
+
+.faq .panel-heading{
+  background: #222;
+}
+
+.faq .panel-heading:hover{
+  background: #333;
+}
+
+.faq .panel-heading a{
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.faq .panel-heading a:hover{
+  color: #fff;
+}
+
+.faq .panel-body{
+  font-size: 0.875em;
+  border: 1px solid #ccc;
+}
+
+.faq .panel-body p{
+  margin-bottom: 20px;
+}
+
+.method h1{
+  font-family: 'opensanscondensedbold';
+  font-size: 1.5em;
+}
+
+.method h2, .faqHelp h2{
+  font-family: 'opensanscondensedbold';
+  font-size: 1.25em;
+}
+
+.method p{
+  font-size: 0.875em;
+  padding-bottom: 20px;
+}
+
+.faqHelp h3{
+  font-family: 'opensanscondensedbold';
+  font-size: 1em;
+}
+
+.faqHelp input{
+  margin-bottom: 20px;
+}
+
+/**************************/
+/********** about *********/
+/**************************/
+.about h1{
+  font-family: 'opensanscondensedbold';
+  font-size: 1.5em;
+}
+
+.about p{
+  font-size: 0.875em;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.community, .philosophy, .objectives{
+  margin-bottom: 20px;
+}
+
+.philosophy{
+  text-align: right;
+}
+
+/**************************/
+/********** contact *********/
+/**************************/
+.contact textarea{
+  margin-bottom: 40px;
+}
+
+/**************************/
+/********** profile *********/
+/**************************/
+.profile label{
+  display: block;
+}
+
+.profile input, .profile textarea{
+  width: 100%;
+  font-size: 0.875em;
+}
+
+.profile textarea{
+  resize:none;
+  height: 100px;
+  font-size: 0.875em;
+}
+
+.profile img{
+  margin-bottom: 20px;
+  width: 160px;
+  height: 160px;
+}
+
+.profile input#avatar.form-control{
+  margin-bottom: 15px;
+}
+
+.profile > form > div.form-group:last-of-type + button:first-of-type{
+  margin-bottom: 20px;
+}
+
+#progress{
+  border:1px solid #19BA9A;
+}
+
+#progress_inner{
+  background:#19BA9A;
+  width:0;
+}
+
+/**************************/
+/********** footer *********/
+/**************************/
+footer {
+  margin-top: 40px;
+  background: -webkit-linear-gradient(bottom, #222, #222  50%, #333  50%, #333);
+  background: -o-linear-gradient(bottom, #222, #222  50%, #333  50%, #333); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #222, #222  50%, #333  50%, #333); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(bottom, #222, #222  50%, #333  50%, #333); /* Standard syntax */
+  background: -ms-linear-gradient(bottom, #222, #222  50%, #333  50%, #333); /* IE10+ */
+}
+
+footer > .container > section:first-child {
+  padding: 20px 20px 0 20px;
+  margin: 0;
+}
+
+footer > .container > section:first-child li{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+footer > .container > section:first-child a{
+  font-family: 'opensanscondensedbold';
+  color: #fff;
+}
+
+footer > .container > section:first-child div:last-child li:first-child{
+  background: url("../img/social1.png") no-repeat 50% 0;
+  height: 34px;
+  margin-bottom: 15px;
+  margin-top: -5px;
+}
+
+footer > .container > section:first-child div:last-child li:last-child{
+  background: url("../img/social2.png")no-repeat 50% 0;
+  height: 34px;
+  margin-top: -5px;
+}
+
+footer > .container > section:first-child div:last-child a{
+  color: transparent;
+  overflow: hidden;
+}
+
+/********** terms & copyright *********/
+footer > .container > section:last-child{
+  margin: 0;
+  padding: 40px 0;
+}
+
+footer > .container > section:last-child a{
+  font-size: 0.75em;
+  color: #fff;
+}
+
+footer > .container > section:last-child div:first-child, footer > .container > section:last-child div:nth-child(2){
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+footer > .container > section:last-child p {
+  font-size: 0.75em;
+  color: #fff;
+  text-align: center;
+}
+
+/**************************/
+/********** sign up + log in *********/
+/**************************/
+.popup{
+  display: none;
+  width: 300px;
+  padding:10px;
+  margin:100px auto;
+  z-index:999;
+}
+
+.overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:rgba(0,0,0,.7);
+  z-index: 9998;
+}
+
+.signup, .login{
+  background: #fff;
+  border: 1px solid #333;
+  box-shadow: 1px 1px 5px #222;
+  width: 300px;
+  padding: 10px;
+  margin: 50px auto;
+  z-index:9999;
+}
+
+.signup .close{
+  display: block;
+  opacity: 1;
+  text-shadow:none;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.glyphicon-remove:hover{
+  color: #fff;
+}
+
+.signFB, .logFB{
+  clear: both;
+}
+
+.signFB a{
+  background: url("../img/signUpBtn.png")no-repeat 0 0;
+  width: 265px;
+  height: 40px;
+  display: block;
+  color: transparent;
+}
+
+.logFB a{
+  background: url("../img/logInBtn.png")no-repeat 0 0;
+  width: 265px;
+  height: 40px;
+  display: block;
+  color: transparent;
+}
+
+.signFB + p, .logFB + p{
+  margin: 20px 0;
+  font-size:0.875em;
+  text-align: center;
+}
+
+.signFB + p:before, .signFB + p:after {
+  content: '';
+  width: 18.5%;
+  border-bottom: 1px solid #222;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logFB + p:before, .logFB + p:after{
+  content: '';
+  width: 20%;
+  border-bottom: 1px solid #222;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.signFB + p:before {
+  margin-right:5%;
+}
+
+.signFB + p:after {
+  margin-left:5%;
+}
+
+.logFB + p:before {
+  margin-right:7%;
+}
+
+.logFB + p:after {
+  margin-left:7%;
+}
+
+.signup label:not(.check), .login label:not(.check){
+  display: block;
+  font-size: 0.875em;
+}
+
+.signup input:not(.check), .login input:not(.check){
+  width: 100%;
+  padding: 2px 5px;
+  font-size: 0.875em;
+}
+
+.signup .checkbox, .login .checkbox{
+  margin-bottom: 20px;
+  font-size: 0.875em;
+}
+
+.signup div:last-child, .login div:last-child{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.signup button, .login button{
+  background: #fff;
+  border: 1px solid #E67E22;
+  color: #E67E22;
+  font-family: 'opensanscondensedbold';
+}
+
+.signup button:hover, .login button:hover{
+  background: #E67E22;
+  color: #fff;
+}
+
+.signup > form + p, .login > form + p {
+  font-size: 0.75em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup > form + p > a:hover, .login > form + p > a:hover, .signup > form + p + span a:hover{
+  color: #19BA9A;
+}
+
+.signup > form + p + span{
+  text-align: center;
+  display: block;
+  font-size: 0.875em;
+}
+
+.hover {
+  color: #19BA9A;
+}
+
+.hover:hover{
+  text-decoration: underline;
+}
+
+/**************************/
+/********** top button *********/
+/**************************/
+#top{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -24px;
+  height: 50px;
+  text-decoration: none;
+  color: #444;
+  font-size: 3em;
+}
+
+#top:hover{
+  color: #555;
+}
+
+/**************************/
+/********** errorPages *********/
+/**************************/
+.errorBg{
+  background: url('../img/asaf-avidan.jpg') no-repeat center top;
+  padding-top: 150%;
+  margin-top: 60px;
+}
+
+.errorPage h1{
+  font-size: 2em;
+  font-family: 'opensanscondensedbold';
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.errorPage ul{
+  list-style: none;
+  padding: 0;
+}
+
+.errorPage p{
+  font-size: 0.75em;
+}
+
+.errorPage p:first-of-type{
+  margin-bottom: 20px;
+}
+
+.errorPage p:last-of-type{
+  margin-bottom: 20px;
+}
+
+.errorPage a{
+  margin-bottom: 40px;
+}
+
+/**************************/
+/********** media queries *********/
+/**************************/
+@media (min-width: 360px) {
+  
+  #bg{
+    padding: 40px 40px;
+  }
+
+  .create-btn{
+    width: 60%;
+  }
+
+  .caption h1 + p{
+    height: 90px;
+  }
+
+  .progress + ul li p:first-of-type{
+    font-size: 1em;
+  }
+
+  .progress + ul li p:last-of-type{
+    font-size: 1em;
+  }
+
+  .errorBg{
+    padding-top: 100%;
+  }
+
+}
+
+@media (min-width: 480px) {
+  
+  #bg{
+    padding: 60px 40px;
+    margin-bottom: 20px;
+  }
+
+  #bg h2{
+    padding-bottom: 40px;
+  }
+
+  .create-btn{
+    width: 50%;
+  }
+
+  .caption h1 + p{
+    height: 85px;
+  }
+
+  #oneProject .progress{
+    height: 30px;
+  }
+
+  #oneProject .progress-bar{
+    font-size: 1em;
+    line-height: 30px;
+  }
+
+  .errorBg{
+    padding-top: 80%;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  #bg{
+    padding: 100px 40px;
+    margin-bottom: 40px;
+  }
+
+  #bg h1{
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  #bg h2{
+    font-size: 1em;
+    padding-bottom: 40px;
+  }
+
+  .headerAll{
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px 30px;
+  }
+
+  .create-btn{
+    width: 30%;
+  }
+
+  .caption h1 + p{
+    height: 75px;
+  }
+
+  .headerAll ul li{
+    font-size: 1em;
+  }
+
+  .bioList{
+    margin-bottom: 20px;
+  }
+
+  .create p{
+    padding: 0 20px;
+    text-align: left;
+  }
+
+  .about p{
+    font-size: 1em;
+  }
+
+  footer > .container > section:first-child {
+    padding: 20px 0 0 0;
+  }
+
+  footer > .container > section:first-child div:first-child li{
+    display: inline-block;
+    text-align: left;
+    margin-top: 5px;
+  }
+
+  footer > .container > section:first-child div:first-child li:first-child{
+    margin-right: 20px;
+  }
+
+  footer > .container > section:first-child div:last-child ul{
+    float:right;
+  }
+
+  footer > .container > section:first-child div:last-child ul li{
+    display: inline-block;
+  }
+
+  footer > .container > section:last-child {
+    padding: 0;
+  }
+
+  footer > .container > section:last-child div:first-child, footer > .container > section:last-child div:nth-child(2){
+    text-align: left;
+  }
+    
+  footer > .container > section:last-child p{
+    text-align: right;
+  }
+
+  .errorBg{
+    padding-top: 60%;
+  }
+
+}
+
+/********** !important overwrite the breakpoint for the toggle menu **********/
+@media (max-width: 992px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+        text-align: center;
+    }
+
+    .navbar-form{
+      display: block;
+      text-align: center;
+    }
+
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+
+    .rewards{
+      display: none;
+    }
+}
+/********** END overwrite the breakpoint for the toggle menu **********/
+
+@media only screen and (min-width : 992px) {
+
+/*** all categorie ***/
+  .dropdown button{
+    /*display:none;*/
+  }  
+    
+  #mylist {
+    display:block;
+    clear:both;
+    position: absolute;
+  }
+  #mylist li{
+    /*float:left;*/
+  }
+/*** END all categorie ***/
+
+  .headerAll{
+    width: 70%;
+    margin: 40px auto;
+    padding: 20px 30px;
+  }
+
+  .caption .progress + ul li p:first-of-type{
+    color: #394091;
+    font-weight: bold;
+    font-size: 0.688em;
+  }
+
+  .caption .progress + ul li p:last-of-type{
+    font-weight: bold;
+    font-size: 0.688em;
+  }
+
+  .caption h1 + p{
+    height: 120px;
+  }
+
+  .catTitle{
+    display: block;
+  }
+
+  .dropdown button{
+    background: none;
+    color: #222;
+    text-align: left;
+    height: auto;
+  }
+
+  .dropdown button:hover{
+    background: none;
+    color: #1ABC9C;
+  }
+
+  .dropdown span{
+    display: none;
+  }
+
+  .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary{
+    color: #222;
+    background: none;
+    border:none;
+    padding: 0;
+  }
+
+  .dropdown-menu{
+    text-align: left;
+    border: none;
+    box-shadow: none;
+  }
+
+  .dropdown-menu li{
+    padding: 0;
+  }
+
+  .dropdown-menu li:hover{
+    background: none;
+    color: #1ABC9C;
+    padding: 0;
+  }
+
+  .dropdown-menu > li > a {
+    padding: 5px 0;
+  }
+
+  .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background: none;
+    padding: 5px 0;
+    color: #1ABC9C;
+    text-decoration: underline;
+  }
+
+  .shmre-btn{
+    margin-left: -20px;
+  }
+
+  #rewards-btn{
+    display: none;
+  }
+
+  .stats{
+    padding: 0 10px;
+  }
+
+  .stats .progress + ul li p:first-of-type{
+    color: #394091;
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+
+  .stats .progress + ul li p:last-of-type{
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+
+  .btn-project a{
+    margin: 7px 0;
+  }
+
+  #tabs-2 .news:last-child a, .postComment, #tabs-4 .workiters:last-child{
+    margin-bottom: 40px;
+  }
+
+  .rewards h1{
+    margin: 0;
+  }
+
+  .allTabs{
+    border: 1px solid #ccc;
+    padding: 0 10px;
+  }
+
+  .rewards{
+    padding: 0 10px;
+  }
+
+  .rewDetail:not(:last-child){
+    border-bottom: 1px solid #ccc;
+  }
+
+  .rewDetail span{
+    padding-left: 40px;
+  }
+
+  .rewDetail p{
+    margin: 0;
+  }
+
+  .rewDetail h2 + p{
+    margin-bottom: 20px;
+  }
+
+  .rewDetail > ul li{
+    text-align: left !important;
+    border: none !important;
+  }
+
+  .rewDetail > ul li p:first-of-type{
+    color: #394091;
+    font-weight: bold;
+    font-size: 0.75em;
+  }
+
+  .rewDetail > ul li p:last-of-type{
+    font-weight: bold;
+    font-size: 0.75em;
+    padding-bottom: 10px;
+  }
+
+  .rewards a{
+    display: block;
+  }
+
+  .rewards a:hover{
+    background: #efefef;
+    text-decoration: none;
+  }
+
+  .tabContrib form, .tabPay form{
+    margin-bottom: 40px;
+  }
+
+  .submit-btn{
+    text-align: center;
+  }
+
+  .bio{
+  padding: 40px 20px;
+}
+
+  .bio{
+    border: 1px solid #ccc;
+  }
+
+  .method{
+    border: 1px solid #ccc;
+    padding: 0 10px;
+  }
+  
+  .faqHelp{
+    padding: 0 10px;
+  }
+
+  .profile div:nth-child(6) > div:last-child{
+    margin-top: 106px;
+  }
+
+  .rewardsAll{
+    display: none;
+  }
+
+  .errorBg{
+    padding-top: 40%;
+  }
+
+}
+
+@media only screen and (min-width : 1200px) {
+
+  .headerAll{
+    width: 60%;
+    margin: 40px auto;
+    padding: 20px 30px;
+  }
+
+}

@@ -1,0 +1,4 @@
+services:
+#    media.example:
+#        class: ArtInvest\MediaBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

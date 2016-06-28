@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+    {% block login %}
+        <ul class="nav navbar-nav navbar-right">                    
+            {% if logged == false %}
+               <li><a href="{{ path('user_homepage') }}">Sign Up</a></li>
+               <li><a href="#">Log In</a></li>
+           {% endif %}
+           {% if logged == true %}                  
+               <li><a href="{{ path('user_show', { 'id': session.id }) }}"><span class="glyphicon glyphicon-user"></span><span>{{session.login}}</span></a></li>
+               <li><a href="{{ path('_logout') }}">Logout</a></li>
+          {% endif %}              
+       </ul>
+    {% endblock %}
+
+{% block content %}
+
+	<!-- HEADER -->
+	<header class="headerAll row">
+		<h1 class="text-center">Create your project!</h1>
+		<h2 class="text-center">Make your dreams happen, raise funds for your projects.</h2>
+	</header><!-- end HEADER -->
+	<!-- CONTAINER -->
+	<div class="container ct">
+		<!-- SECTION -->
+		<section>
+			<div class="create row">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<p>Friends, fans, and inspired strangers have pledged $2.0 billion to projects on Workit, funding everything from homemade postcards to Oscar-winning documentaries.</p>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<p>We host projects from the worlds of Art, Design, Edition, Fashion, Games, Music, Photography, Theater, Video and Web. We built Workit to serve creative projects and the artists, designers, and creative people who make them.</p>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<p>Everyone loves being a part of creating something new. Millions of people have jumped in to support creators on Workit. They’ve gotten some great rewards, and a unique look into the creator’s process in return. It’s about more than money. It’s people making something together!</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+					<a class="btn black-btn" href="{{ path('_project_new')}}">Start creating a project</a>
+				</div>
+			</div>
+		</section><!-- end SECTION -->
+	</div><!-- end CONTAINER -->
+
+{% endblock %}

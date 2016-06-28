@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Media</h1>
+
+    <table class="record_properties">
+
+        <tbody>
+            {% if empty == true %}
+                <p>No media !</p>
+            {% endif %}
+            
+            {% if empty != true %}
+
+                {% for entity in entities %}
+
+                    {% if entity.image != NULL %}
+                        <img src="{{ entity.image }}" alt="{{ entity.image }}" height="100px" width="100px" /></td><br>
+                        {% if creator == true %}
+                            <a href="{{ path('media_delete', { 'id': entity.id }) }}">Delete image</a> <br>
+                        {% endif %}    
+                    {% endif %}                
+
+                {% endfor %}
+
+                
+
+                {% if (set == true) and (document != false) %}
+                    <form method="get" action="{{ asset('document/' ~documentId~ '/' ~document) }}">
+                    <button type="submit">Download!</button>
+                    </form>               
+                {% endif %}
+
+            {% endif %}
+            
+             
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('_project_showOne', {'id': project_id}) }}">
+            Back to the project
+        </a>
+    </li>
+</ul>
+{% endblock %}

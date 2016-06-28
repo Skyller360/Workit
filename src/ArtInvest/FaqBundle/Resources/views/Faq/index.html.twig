@@ -1,0 +1,108 @@
+{% extends '::base.html.twig' %}
+{% block login %}
+    <ul class="nav navbar-nav navbar-right">                        
+        {% if logged == false %}
+            <li><a id="signup" href="{{ path('user_homepage') }}">Sign Up</a></li>
+            <li><a id="login" href="#">Log In</a></li>
+        {% endif %}
+        {% if logged == true %}                     
+            <li><a href="{{ path('user_show', { 'id' : session.id }) }}"><span class="glyphicon glyphicon-user"></span><span>{{ session.login }}</span></a></li>
+            <li><a href="{{ path('_logout') }}">Logout</a></li>
+        {% endif %}                 
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <!--|||||||||||||||||||||||||||||||||||||||||-->
+    {# Login Popup #}
+    {% if logged == false %}
+        <div class="panel panel-default popup" id="popup_login">        
+            <div class="panel-heading">Login Form <span>X</span></div>
+            <form class="panel-body" role="form" action="/Login_check" method="post">
+                <label for="username">Username:</label>
+                <input class="form-control" type="text" id="username" name="login" />
+
+                <label for="password">Password:</label>
+                <input class="form-control" type="password" id="password" name="password" />
+                <hr>
+                <button class="form-control btn btn-primary" type="submit">Login</button>
+            </form>     
+        </div>
+
+        <div class="panel panel-default popup" id="popup_signup"> 
+            <div class="panel-heading">Sign-up Form <span>X</span></div>
+            {{ form_start(subscribe_form )}}
+            {{ form_end(subscribe_form )}}
+        </div>
+    {% endif %}
+<!-- HEADER -->
+    <header class="headerAll row">
+        <h1 class="text-center">How it works?</h1>
+        <h2 class="text-center">Frequently Asked Questions</h2>
+    </header><!-- end HEADER -->
+    <!-- CONTAINER -->
+    <div class="container ct">
+        <!-- SECTION -->
+        <section>
+            <!-- FAQ -->
+            <div class="faq">
+
+                <div class="panel-group" id="accordion">
+                    {% for respond in responds %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{loop.index}}">{{ respond.question }}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse{{loop.index}}" class="panel-collapse collapse">
+                                <div class="panel-body">{{ respond.answer }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div><!-- end FAQ -->
+            <!-- METHOD -->
+            <div class="method">    
+                <h1>Method</h1> 
+                <div class="methodText">
+                    <h2>Main information</h2> 
+                    <p>Before setting your funding goal, keep in mind that your campaign will follow an all or nothing rule:</p>
+                    <p>If you reach or exceed your goal, you will receive the collected funds. However if your goal is not reached by the end of the campaign, your Workiters (contributors) will be automatically refunded. Choosing the correct goal for your project is THE key starting point.</p>
+                    <p>To set your goal, make a budget of all the costs related to your project. Be precise, transparent, and include only the bare minimum – keep in mind that you can always exceed your goal.</p>
+                    <p>You might want to know that the average pledge on Workit is around $55. Think of the number of Workiters you will need to mobilize to reach your goal.</p>
+                    <p>Take your time when setting your goal. Once your project is online, you will not be able to change the amount or the duration of your campaign!</p>
+                </div>
+                <div class="methodText">
+                    <h2>Details</h2> 
+                    <p>This is the part that will give the most information about your project. You should explain its birth, your reasons for running a campaign, and what will happen once you reach your goal. Try to answer these questions: Who? What? How? Where? Why?</p>
+                    <p>This is the story of your project, take time to tweak it and tell it well!</p>
+                    <p>Remember to illustrate this page with images, photographs, videos or sounds. This part will help you make your project credible and arouse interest among people you do not know.</p>
+                    <p>You will have to be transparent and consistent. Getting support from people around you and the public is not an easy task.</p>
+                    <p>Make a budget of your costs, be clear and precise, and also mention what you will do if you exceed your goal.</p>
+                    <p>This summary is limited to 140 characters. This is the first thing that people will read. Be clear and make sure it will be a real call to action! Explain the nature of your project (short film, exhibition, book, comics, web-documentary, theater play, mobile application, video game, etc.) in this sentence. Half of the visitors will only read this text.</p>
+                </div>
+                <div class="methodText">
+                    <h2>Media</h2>
+                    <p>Pick a nice picture and insert the title of your project with a pretty font. Keep in mind that this picture will represent your project once exported on social networks or elsewhere on the web.</p>
+                    <p>Choose a high-quality image to avoid pixelation. The recommended format is 620x376 pixels. You can upload JPEG, PNG or GIF images of at most 5 MBs.</p>
+                    <p>Write the title of your project legibly. You can also add the name of the author - "presented by XXX". If you do not have any tool to edit your project picture, you can use an online editor such as Pixlr.</p>
+                </div>
+            </div><!-- end METHOD -->
+            <!-- FAQ MORE HELP -->
+            <div class="faqHelp row">
+                <h2>Still can't find what you need?</h2>
+                    {{ form_start(faq_form) }}
+                        {{ form_errors(faq_form.question) }}
+                         
+                        {{ form_row(faq_form.question, { 'attr': {'class': 'form-control'} }) }} 
+                        {{ form_row(faq_form.answer, { 'label': false,  'disabled':'disabled', 'attr': {'class': 'hide'} }) }} 
+                        {{ form_row(faq_form.submit, { 'attr': {'class': 'class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 btn orange-btn'} }) }} 
+
+                    {{ form_end(faq_form) }}            
+            </div><!-- end FAQ MORE HELP -->
+        </section><!-- end SECTION -->
+    </div><!-- end CONTAINER -->
+{% endblock %}

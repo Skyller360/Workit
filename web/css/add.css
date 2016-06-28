@@ -1,0 +1,130 @@
+/*PAGE ABOUT*/
+.ct{
+	min-height:850px;
+}
+
+.ct>.container{
+	padding:10px 25px;
+}
+
+.ct>.container>p{
+	margin:10px 25px !important;
+}
+
+.ct .btn-black{
+	margin:15px auto;
+	text-align: center;
+	display: block;
+	padding:10px;
+	background:#111;
+	color:#eee;
+	width: 100%;
+
+}
+
+.btn-black:hover{
+	text-decoration: none;
+}
+
+/*PAGE FAQ*/
+.faq ul{
+	list-style:none;
+	margin: 0;
+	padding: 0 10px;
+}
+
+.faq>ul>li{
+
+	border:1px solid #000;
+	font-weight:900;
+	text-align: center;
+	cursor:pointer;
+}
+
+/*hide answer by default*/
+.faq>ul>li>ul>li{
+	font-weight:100;
+	display:none;
+	text-align: left;
+}
+
+
+/*PROJECTFORM*/
+#tabs>ul>li>a{
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	background:#777;
+	text-align: center;
+	line-height:50px;
+	cursor:pointer;	
+	color:#fff;
+	text-decoration: none;
+}
+
+#tabs>ul>li{
+	display: inline-block;
+	list-style: none;
+}
+
+
+/*doesn't work*/
+#tabs .ui-tabs-active
+{
+	background:#111 !important;
+}
+
+
+/*Login/Register Popup*/
+.popup{
+	display: none;
+	width: 300px;
+	padding:10px;
+	margin:100px auto;
+	/*border:1px solid #000;
+	border-radius:5px;*/
+	z-index:999;
+}
+
+.overlay{
+	display: none;
+}
+
+/*contribute page*/
+.goodiesActive{
+	background: #efefef;
+    text-decoration: none;
+}
+
+.rewardsCt a{
+	text-decoration: none;
+}
+
+/*profile page*/
+/*avatr fixed size*/
+
+#dnd>img{
+	width: 160px;
+	height: 160px;
+}
+
+/*avatar upload progress bar*/
+
+#progress{
+	border:1px solid #19BA9A;
+}
+
+#progress_inner{
+	background:#19BA9A;
+	width:0;
+}
+
+/*like/follow btn*/
+.share{
+	display: none;
+}
+
+/*hide glyphicon stars*/
+.active{
+	display: none;
+}

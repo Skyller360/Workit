@@ -1,0 +1,15 @@
+# <IfModule mod_rewrite.c>
+#    RewriteEngine On
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteRule ^(.*)$ web/$1 [QSA,L]
+# </IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    Rewritecond %{HTTP_HOST} ^technobel.be/play-zone/playpark/gp2/ArtInvest$
+    Rewriterule ^(.*) http://www.technobel.be/play-zone/playpark/gp2/ArtInvest$1 [QSA,L,R=301]
+     
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ play-zone/playpark/gp2/ArtInvest/web/app.php [QSA,L]
+     
+</IfModule>

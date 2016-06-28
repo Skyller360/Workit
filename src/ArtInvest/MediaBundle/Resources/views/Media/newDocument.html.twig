@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block head %}
+	<style id="dynamic_style"></style>
+
+{% endblock %}
+
+{% block body -%}
+
+    <h1>Media creation</h1>
+
+	{{form_start(form)}}
+
+    <input type="file" name="document"/><br/>
+	
+	{{form_end(form)}}
+
+	<ul class="record_actions">		
+	    <li>
+	        <a href="{{ path('_project_showOne', { 'id':  id }) }}">
+	            Back to the project
+	        </a>
+	    </li>
+	</ul>
+
+{% endblock %}

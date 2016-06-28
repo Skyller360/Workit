@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Art'invest{% endblock %}
+
+{% block body -%}
+    <h1>Comment</h1>
+
+    {% for entity in entities %}               
+       <p><label>Content</label>
+       {{ entity.content|raw }}</p>
+       <p><label>Publish at</label>
+       {{ entity.date|date("m/d/Y") }}</p>
+       
+       {% if simple != true %}
+        <a href="{{ path('comment_report', { 'id': entity.id }) }}">Report Comment</a>    
+       {% endif %}
+       
+    {% endfor %}
+    <br>
+    <a href="{{ path('_project_showOne', { 'id':  id }) }}">Get Back</a>
+    <a href="{{ path('_add_comment', { 'id': id }) }}">Add Comment</a>
+
+{% endblock %}

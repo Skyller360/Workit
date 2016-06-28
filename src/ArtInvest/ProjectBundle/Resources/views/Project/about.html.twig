@@ -1,0 +1,99 @@
+{% extends '::base.html.twig' %}
+
+{% block login %}
+    <ul class="nav navbar-nav navbar-right">                        
+        {% if logged == false %}
+            <li><a id="signup" href="{{ path('user_homepage') }}">Sign Up</a></li>
+            <li><a id="login" href="#">Log In</a></li>
+        {% endif %}
+        {% if logged == true %}                     
+            <li><a href="{{ path('user_show', { 'id': entity.user.id }) }}"><span class="glyphicon glyphicon-user"></span><span>{{ entity.user.login }}</span></a></li>
+            <li><a href="{{ path('_logout') }}">Logout</a></li>
+        {% endif %}                 
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <!--|||||||||||||||||||||||||||||||||||||||||-->
+    {# Login Popup #}
+    {% if logged == false %}
+        <div class="overlay" id="login_overlay">
+            <div class="login" id="popup_login">
+                <a class="close" href="#">X</a>
+                <div class="logFB">
+                    <img src="http://i.imgur.com/XG0zHdW.png" alt="Login with Facebook">
+                </div>
+                <p>Or log in with email</p>
+                <form role="form" method="post" action="/Login_check">
+                    <div class="form-group">
+                        <label for="form_login" class="required">*Login</label>
+                        <input type="text" id="form_login" name="login" required="required" placeholder="johndoe01"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="form_hash_first" class="required">*Password</label>
+                        <input type="password" id="form_hash_first" name="password" required="required"/>
+                    </div>
+                    <div class="checkbox row">
+                        <label class="check col-xs-6 col-sm-6 col-md-6"><input class="check" type="checkbox" value="">Remember me</label>
+                        <a href="#"><span class="col-xs-6 col-sm-6 col-md-6 hover text-right">Forgot password?</span></a>
+                    </div>
+                    <div class="form-group row">
+                        <button class="col-xs-12 col-sm-12 col-md-12 btn" type="submit" id="form_save">Log in</button>
+                    </div>
+                </form>
+                <p>New on Workit? <a class="hover" href="">Sign Up</a></p>
+            </div>
+        </div>
+        {# Signup Popup #}
+        <div class="overlay" id="signup_overlay">
+            <div class="signup" id="popup_signup">
+                <a class="close" href="#">X</a>
+                <div class="signFB">
+                    <img src="http://i.imgur.com/XG0zHdW.png" alt="SignUp with Facebook">
+                </div>
+                <p>Or sign up with email</p>
+                    {{ form_start(subscribe_form )}}
+                        
+                    {{ form_end(subscribe_form )}}
+                <p>By signing up you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+                <span>Already have an account? <a class="hover" href="">Log In</a></span>
+            </div>
+        </div>
+    {% endif %}
+    <!--|||||||||||||||||||||||||||||||||||||||||-->  
+    <!-- HEADER -->
+    <header class="headerAll row">
+        <h1 class="text-center">About us</h1>
+        <h2 class="text-center">We bring creative projects to life</h2>
+    </header><!-- end HEADER -->
+    <!-- CONTAINER -->
+    <div class="container ct">
+        <!-- SECTION -->
+        <section>
+            <!-- ABOUT -->
+            <div class="about">
+                <!-- COMMUNITY -->
+                <div class="community">
+                    <h1>Our Community</h1> 
+                    <p>Workit is an enormous global community built around creativity and creative projects. Over 9 million people, from every continent on earth, have backed a Workit project.</p>
+                    <p>Some of those projects come from influential artists like De La Soul or Marina Abramović. Most come from amazing creative people you probably haven’t heard of — from Grandma Pearl to indie filmmakers to the band down the street.</p>
+                    <p>Every artist, filmmaker, designer, developer, and creator on Workit has complete creative control over their work — and the opportunity to share it with a vibrant community of backers.</p>
+                </div><!-- end COMMUNITY -->
+                <!-- PHILOSOPHY -->
+                <div class="philosophy">
+                    <h1>Our Philosophy</h1>
+                    <p>We built Workit to help bring creative projects to life. We measure our success as a company by how well we achieve that mission, not by the size of our profits. That’s why, in 2015, we became a Benefit Corporation. Benefit Corporations are for-profit companies that are obligated to consider the impact of their decisions on society, not only shareholders. Radically, positive impact on society becomes part of a Benefit Corporation’s legally defined goals.</p>
+                    <p>When we became a Benefit Corporation, we amended our corporate charter to lay out specific goals and commitments to arts and culture, making our values core to our operations, fighting inequality, and helping creative projects come to life. You can read our commitments in full below.</p>
+                </div><!-- end PHILOSOPHY -->
+                <!-- OBJECTIVES -->
+                <div class="objectives">
+                    <h1>Our Objectives</h1> 
+                    <p>Workit launched on April 28, 2009. A lot has happened since.</p>
+                    <p>We had the craziest 24 hours ever. We saw $1 billion get pledged. We shared the early designs behind Workit. We learned what a Workit project looked like back in 1713. We talked about why Workit matters. We made some important changes to how we govern the site. We put on a film festival (and another) (and another) (and another) (and another). A project won an Oscar. And after five years, we made a video about it all.</p>
+                </div><!-- end OBJECTIVES -->
+                <a href="{{ path('_project_create') }}"><button class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 orange-btn btn">Start a project</button></a>
+            </div><!-- end ABOUT -->
+        </section><!-- end SECTION -->
+    </div><!-- end CONTAINER -->
+{% endblock %}

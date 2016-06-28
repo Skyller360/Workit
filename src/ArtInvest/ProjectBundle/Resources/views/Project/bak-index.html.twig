@@ -1,0 +1,70 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Art'invest{% endblock %}
+
+{% block body -%}
+    <h1>Project list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Delay</th>
+                <th>Amount</th>
+                <th>Abstract</th>
+                <th>Description</th>
+                <th>Risk</th>
+                <th>Cover</th>
+                <th>Goodies</th>
+                <th>Video</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('_project_showOne', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.title }}</td>
+                <td>{% if entity.delay %}{{ entity.delay|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.amount }}</td>
+                <td>{{ entity.abstract }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.risk }}</td>
+                <td>{{ entity.cover }}</td>
+                <td>{{ entity.category.type }}</td> 
+                <td>{{ entity.video }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('_project_showOne', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    {% if userId == entity.user.id %}
+                        <li>
+                            <a href="{{ path('_project_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>    
+                    {% endif %}
+                    
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        {% if connect == true %}
+            <li>
+                <a href="{{ path('_project_new') }}">
+                    Create a new project
+                </a>
+            </li>                
+        {% endif %}
+        
+        <li>
+            <a href="/">
+                Back to the index
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

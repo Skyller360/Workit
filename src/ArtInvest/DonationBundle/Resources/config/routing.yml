@@ -1,0 +1,7 @@
+donation_donation:
+    resource: "@DonationBundle/Resources/config/routing/donation.yml"
+    prefix:   /donation
+
+donation_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DonationBundle:Default:index }

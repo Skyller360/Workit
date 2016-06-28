@@ -1,0 +1,55 @@
+user_homepage:
+    path:     /subscribe
+    defaults: { _controller: UserBundle:Subscribe:subscribe }
+
+user_subscribed:
+    path: 	/subscribed
+    defaults: {_controller: UserBundle:Subscribe:subscribe}
+
+_index:
+    path:     /
+    defaults: { _controller: UserBundle:Login:Index }
+
+_login:
+    path:     /Login
+    defaults: { _controller: UserBundle:Login:Login }
+
+_login_check:
+    path:     /Login_check
+    defaults: { _controller: UserBundle:Login:Login_check }
+
+_logout:
+    path:     /Logout
+    defaults: { _controller: UserBundle:Login:Logout }
+
+user_show:
+    path: 	/user/show/{id}
+    defaults: {_controller: UserBundle:User:show}
+
+user_edit:
+    path: 	/{id}/edit
+    defaults: {_controller: UserBundle:User:edit}
+
+user_update:
+    path: 	/update/{id}
+    defaults: {_controller: UserBundle:User:update}
+
+user_delete:
+    path: 	/delete/{id}
+    defaults: {_controller: UserBundle:User:delete}
+
+#Admin Views
+_admin_user:
+    path:   /admin
+    defaults: {_controller: UserBundle:User:adminIndex}
+
+_admin_user_show:
+    path:   /admin/user/show/{id}
+    defaults: {_controller: UserBundle:User:adminShow}
+
+# Redirect to /user
+# _admin:
+#     path:   /admin
+#     defaults: {_controller: UserBundle:User:Index}
+
+#NEED TO BE CHANGED ON BOTH VERSION

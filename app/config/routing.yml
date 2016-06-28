@@ -1,0 +1,35 @@
+faq:
+    resource: "@FaqBundle/Resources/config/routing.yml"
+    prefix:   /
+
+media:
+    resource: "@MediaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+category:
+    resource: "@CategoryBundle/Resources/config/routing.yml"
+    prefix:   /
+
+donation:
+    resource: "@DonationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+news:
+    resource: "@NewsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+comment:
+    resource: "@CommentBundle/Resources/config/routing.yml"
+    prefix:   /
+
+project:
+    resource: "@ProjectBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

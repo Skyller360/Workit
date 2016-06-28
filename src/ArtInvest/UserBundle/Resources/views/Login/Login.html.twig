@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}UserBundle:Login:Login{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Login:Login page</h1>
+
+<form action="{{ path('_login_check') }}" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="login" />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" />
+    <button type="submit">login</button>
+</form>
+
+{% endblock %}

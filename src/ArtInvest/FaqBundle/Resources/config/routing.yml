@@ -1,0 +1,7 @@
+faq_faq:
+    resource: "@FaqBundle/Resources/config/routing/faq.yml"
+    prefix:   /faq
+
+faq_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: FaqBundle:Default:index }

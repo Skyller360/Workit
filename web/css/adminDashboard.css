@@ -1,0 +1,12 @@
+/**
+*
+* Custom css for AdminDashboard
+*
+**/
+
+/*Colones 'actions'*/
+table>tbody>tr>td>ul>li{display:inline-block;}
+
+.sidebar-search{
+	display: none !important;
+}

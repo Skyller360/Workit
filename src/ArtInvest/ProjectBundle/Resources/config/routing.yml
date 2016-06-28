@@ -1,0 +1,111 @@
+_project_show:
+    path:     /project/show
+    defaults: { _controller: ProjectBundle:Project:index }
+
+_project_create:
+    path:     /project/create/submit
+    defaults: { _controller: ProjectBundle:Project:create }
+
+_project_new:
+    path:     /project/create
+    defaults: { _controller: ProjectBundle:Project:new }
+
+_project_showOne:
+    path:     /project/show/{id}
+    defaults: { _controller: ProjectBundle:Project:show }
+
+_project_edit:
+    path:     /project/edit/{id}
+    defaults: { _controller: ProjectBundle:Project:edit }
+
+_project_update:
+    path:     /project/update/{id}
+    defaults: { _controller: ProjectBundle:Project:update }
+
+_project_report:
+    path:     /project/report/{id}
+    defaults: { _controller: ProjectBundle:Project:report }
+
+_project_text:
+    path:   /project/createit
+    defaults: { _controller: ProjectBundle:Project:textCreate }
+
+_project_user_delete:
+    path:   /project/delete/{id}
+    defaults: { _controller: ProjectBundle:Project:userDelete }
+
+#Admin Views
+_project_delete:
+    path:     /admin/project/delete/{id}
+    defaults: { _controller: ProjectBundle:Project:delete }
+
+_admin_project:
+    path:     /admin/project
+    defaults: { _controller: ProjectBundle:Project:admin }
+
+_project_check:
+    path:     /admin/project/check/{id}
+    defaults: { _controller: ProjectBundle:Project:check }
+
+_admin_project_showOne:
+    path:     /admin/project/show/{id}
+    defaults: { _controller: ProjectBundle:Project:adminshowOne }
+
+_admin_comment:
+    path:     /admin/comments
+    defaults: { _controller: ProjectBundle:Project:adminComments}
+
+_admin_ShowOne_Comments:
+    path:   /admin/comments/show/{id}
+    defaults: { _controller: ProjectBundle:Project:adminShowOneComments}
+
+
+#comments
+_add_comment:
+    path:     /project/addcomment/{id}
+    defaults: { _controller: CommentBundle:Comment:create }
+
+comment_show:
+    path:     /project/showcomment/{id}
+    defaults: { _controller: CommentBundle:Comment:showComment }
+
+comment_report:
+    path:     /project/reportcomment/{id}
+    defaults: { _controller: CommentBundle:Comment:report }
+
+
+#news
+_add_news:
+    path:     /project/addnews/{id}
+    defaults: { _controller: NewsBundle:News:create }
+
+news_show:
+    path:     /project/shownews/{id}
+    defaults: { _controller: NewsBundle:News:showNews }
+
+#donation
+_add_donation:
+    path:     /project/donate/{id}
+    defaults: { _controller: DonationBundle:Donation:create }
+    requirements:
+        methods: POST, GET
+
+donation_show:
+    path:     /project/showdonation/{id}
+    defaults: { _controller: DonationBundle:Donation:showDonation }
+
+#media
+
+media_show:
+    path:     /project/showmedia/{id}
+    defaults: { _controller: MediaBundle:Media:showMedia }
+
+#simple page
+
+_about:
+    path:     /about
+    defaults: { _controller: ProjectBundle:Project:about }
+
+_contact:
+    path:     /contact
+    defaults: { _controller: ProjectBundle:Project:contact }

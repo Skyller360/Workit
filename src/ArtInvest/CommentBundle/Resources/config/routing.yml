@@ -1,0 +1,7 @@
+comment_comment:
+    resource: "@CommentBundle/Resources/config/routing/comment.yml"
+    prefix:   /comment
+
+comment_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: CommentBundle:Default:index }

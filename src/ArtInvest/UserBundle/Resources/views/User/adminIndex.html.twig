@@ -1,0 +1,316 @@
+{% extends '::base.html.twig' %}
+
+{% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Work'It | Admin Dashboard</title>
+
+    {# StyleSheets #}
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{{ asset('css/metisMenu.min.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
+
+    {# DataTables CSS #}
+    <link href="{{ asset('css/jquery.dataTables_themeroller.css') }}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- AdminDashboard.css (css perso) -->
+    <link href="{{ asset('css/adminDashboard.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+
+        {# /Notice Display #}
+        {% for flashMessage in app.session.flashbag.get('success') %}
+
+           <div class="alert alert-success">
+                <strong>Success!</strong>
+                    {{ flashMessage }}
+            </div>
+        {% endfor %}
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path('_admin_user') }}">Work'It | Admin Dashboard</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{ path('_logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="{{ path('_admin_user') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('_admin_project') }}"><i class="fa fa-edit fa-fw"></i>Project Administration</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('_category_show') }}"><i class="fa fa-edit fa-fw"></i>Category Administration</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('_admin_comment') }}"><i class="fa fa-edit fa-fw"></i>Comments Administration</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('_admin_faq') }}"><i class="fa fa-edit fa-fw"></i>FAQ Administration</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Admin Dashboard</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <!-- ######################################  -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tags fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">{{p_accepted|length}}</div>
+                                        <div>Project to check</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="{{ path('_admin_project') }}">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-warning fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">{{p_reported|length}}</div>
+                                        <div>Project Reported</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="{{ path('_admin_project') }}">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-flag fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">{{c_reported|length}}</div>
+                                        <div>Comments Reported</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="{{ path('_admin_comment') }}">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">{{faq|length}}</div>
+                                        <div>Unanswered FAQ questions</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ######################################  -->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Users Administration
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table class="table table-striped {# table-bordered #} table-hover dataTable footer" id="dataTables">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th>ID</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Login</th>
+                                                    <th>Mail</th>
+                                                    <th>Location</th>
+                                                    <th>Usergroup</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                {% for entity in entities %}
+                                                    <tr role="row">
+                                                        <td class="center"><a class="btn btn-default" href="{{ path('_admin_user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                                        <td>{{ entity.fname }}</td>
+                                                        <td>{{ entity.lname }}</td>
+                                                        <td>{{ entity.login }}</td>
+                                                        <td>{{ entity.mail }}</td>
+                                                        <td>{{ entity.location }}</td>
+                                                        <td>{{ entity.usergroup }}</td>
+                                                        <td>
+                                                            <ul>
+                                                                <li>
+                                                                    <a class="btn btn-primary" href="{{ path('_admin_user_show', { 'id': entity.id }) }}">show</a>
+                                                                </li>
+                                                                {#<li>
+                                                                    <a href="{{ path('user_edit', { 'id': entity.id }) }}">edit</a>
+                                                                </li> #}
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            <!-- /.table-responsive -->
+                            <div class="well">
+                                <h4>Information</h4>
+                                <p>Ex turba vero imae sortis et paupertinae in tabernis aliqui pernoctant vinariis, non nulli velariis umbraculorum theatralium latent, quae Campanam imitatus lasciviam Catulus in aedilitate sua suspendit omnium primus; aut pugnaciter aleis certant turpi sono fragosis naribus introrsum reducto spiritu concrepantes; aut quod est studiorum omnium maximum ab ortu lucis ad vesperam sole fatiscunt vel pluviis, per minutias aurigarum equorumque praecipua vel delicta scrutantes.
+
+                                Siquis enim militarium vel honoratorum aut nobilis inter suos rumore tenus esset insimulatus fovisse partes hostiles, iniecto onere catenarum in modum beluae trahebatur et inimico urgente vel nullo, quasi sufficiente hoc solo, quod nominatus esset aut delatus aut postulatus, capite vel multatione bonorum aut insulari solitudine damnabatur.
+
+                                Quod cum ita sit, paucae domus studiorum seriis cultibus antea celebratae nunc ludibriis ignaviae torpentis exundant, vocali sonu, perflabili tinnitu fidium resultantes. denique pro philosopho cantor et in locum oratoris doctor artium ludicrarum accitur et bybliothecis sepulcrorum ritu in perpetuum clausis organa fabricantur hydraulica, et lyrae ad speciem carpentorum ingentes tibiaeque et histrionici gestus instrumenta non levia.</p>
+                                <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://google.com/">View More</a>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- ###################################### -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{{ asset('js/metisMenu.min.js') }}"></script>
+
+    <!-- DataTables Plugin javascript -->
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ asset('js/sb-admin-2.js') }}"></script>
+
+
+    {# ToFix #}
+    <script>
+        $(document).ready(function() {
+            $('#dataTables').DataTable();
+        } );
+
+    // </script>
+{% endblock %}
